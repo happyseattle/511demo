@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="511 Demo">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="//jqueryui.com/jquery-wp-content/themes/jquery/css/base.css?v=1">
+        <link rel="stylesheet" href="//jqueryui.com/jquery-wp-content/themes/jqueryui.com/style.css">
+
+        <title>511 demo</title>
+
+        <script type="text/javascript" src="javascript/map.js"></script>
+        <script type="text/javascript" src="javascript/location.js"></script>
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+            
+            function initialize()
+            {
+                initializemap();
+                doGeolocation();
+            }
+
+        </script>
+
+    </head>
+
+    <body onload="initialize()">
+
+        <div class="centered"><button id="dogeolocation" onclick="doGeolocation()">Use my location</button></div>
+        <div id="geolocation" class="centered"></div>
+
+        <div class="header"><p class="header" id="togglemap">Toggle map</p></div>
+        <div id="mapcanvas" class="content"></div>
+
+        <div id="idAgenciesHeader" class="header"><p class="header">Step 1: Check an agency</p></div>
+        <div id="idAgenciesContainer" class="content centered">
+            <input type="checkbox" name="agencies" value="AC Transit" class="AgencyItem"/>AC Transit
+            <input type="checkbox" name="agencies" value="BART" class="AgencyItem" />BART
+            <input type="checkbox" name="agencies" value="Caltrain" class="AgencyItem" />Caltrain
+            <input type="checkbox" name="agencies" value="Dumbarton Express" class="AgencyItem" />Dumbarton Express
+            <input type="checkbox" name="agencies" value="Marin Transit" class="AgencyItem" />Marin Transit
+            <input type="checkbox" name="agencies" value="SamTrans" class="AgencyItem" />SamTrans
+            <input type="checkbox" name="agencies" value="SF-MUNI" class="AgencyItem" />SF-MUNI
+            <input type="checkbox" name="agencies" value="Vine (Napa County)" class="AgencyItem" />Vine (Napa County)
+            <input type="checkbox" name="agencies" value="VTA" class="AgencyItem" />VTA
+            <input type="checkbox" name="agencies" value="WESTCAT" class="AgencyItem" />WESTCAT
+        </div>
+
+        <div id="idRoutesHeader" class="header"><p class="header">Step 2: Click a route</p></div>
+        <div id="idRoutesContainer" class="content"></div>
+
+        <div id="idStopsHeader" class="header"><p class="header">Step 3: Click a stop</p></div>
+        <div id="idStopsContainer" class="content"></div>
+
+        <div id="idDepartureTimeHeader" class="header"><p class="header">Step 4: Next departure time is available</p></div>
+        <div id="idDepartureTimeContainer" class="content"></div>
+
+        <script src="javascript/dynamicupdate.js"></script>
+
+    </body>
+
+</html>
